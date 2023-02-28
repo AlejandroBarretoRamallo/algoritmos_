@@ -39,6 +39,8 @@ class Rational_t {
     bool is_equal(Rational_t&, const double precision = EPSILON);  
     bool is_greater(Rational_t&, const double precision = EPSILON);
     bool is_less(Rational_t&, const double precision = EPSILON);
+
+    void inverso();
   
     Rational_t add(Rational_t&);                //Suma de numeros racionales
     Rational_t substract(Rational_t&);          //Resta de numeros racionales

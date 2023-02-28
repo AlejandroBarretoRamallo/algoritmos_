@@ -43,7 +43,7 @@ int main()
   //Comprobar si y es mayor que x pasando y como paramtero
   cout << "x < y? " << (x.is_greater(y) ? "true" : "false") << endl;
   //Comprobar si x es mayor que y pasando y como parametro
-  cout << "x > y? " << (x.is_less(y) ? "true" : "false") << endl
+  cout << "x > y? " << (x.is_less(y) ? "true" : "false") << endl;
 
   //Sumamos ambos numeros racionales
   cout << "objeto_1 + objeto_2: ";
@@ -57,5 +57,7 @@ int main()
   //Dividimos ambos numeros racionales
   cout << "objeto_1 / objeto_2: ";
   objeto_1.divide(objeto_2).write();
+  objeto_3.inverso();
+  objeto_3.write();
   return 0;
 }

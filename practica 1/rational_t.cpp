@@ -84,3 +84,9 @@ void  Rational_t::read(istream& is) {
   is >> den_;
   assert(den_ != 0);    //Comprobar que el denominador es distinto de 0
 }
+
+void Rational_t::inverso() {
+  double auxiliar = num_;
+  num_ = den_;
+  den_ = auxiliar;
+}
