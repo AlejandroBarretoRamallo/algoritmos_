@@ -142,7 +142,7 @@ rational_t::divide(const rational_t& r) const
 rational_t
 operator+(const rational_t& a, const rational_t& b)
 {
-  // rellenar código
+  return rational_t ((a.get_num() * b.get_den()) + (a.get_den() * b.get_num()), a.get_den() * b.get_den());
 }
 
 
@@ -150,7 +150,7 @@ operator+(const rational_t& a, const rational_t& b)
 rational_t
 operator-(const rational_t& a, const rational_t& b)
 {
-  // rellenar código
+  return rational_t ((a.get_num() * b.get_den()) - (a.get_den() * b.get_num()), a.get_den() * b.get_den());
 }
 
 
@@ -158,7 +158,7 @@ operator-(const rational_t& a, const rational_t& b)
 rational_t
 operator*(const rational_t& a, const rational_t& b)
 {
-  // rellenar código
+  return rational_t (a.get_num() * b.get_num(), a.get_den() * b.get_den());
 }
 
 
@@ -166,7 +166,7 @@ operator*(const rational_t& a, const rational_t& b)
 rational_t
 operator/(const rational_t& a, const rational_t& b)
 {
-  // rellenar código
+  return rational_t (a.get_num() * b.get_den(), a.get_den() * b.get_num());
 }
 
 
