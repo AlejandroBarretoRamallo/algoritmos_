@@ -5,9 +5,9 @@
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
-//              "C++ Programming Style Guidelines"
+//              "matriz_c++ Programming Style Guidelines"
 //              https://geosoft.no/development/cppstyle.html
-// COMPILACIÓN: g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: g++ -g Rational_t.cpp main_p2.cpp -o main_p2
 
 // pauta de estilo [92]: comentarios multilínea usando solo "//"
 
@@ -15,7 +15,7 @@
 #include <cmath>
 
 // pauta de estilo [41]: ficheros de cabecera agrupados y separados
-#include "rational_t.hpp"
+#include "Rational_t.hpp"
 
 #include "vector_t.hpp"
 
@@ -23,47 +23,45 @@
 
 using namespace std;
 
-int main()
-{
-  rational_t a(1, 2), b(3);
+int main() {
+  Rational_t objeto_racional1(1, 2), objeto_racional2(3);
 
   // FASE I
-  cout << "a + b: ";
-  (a+b).write();
+  cout << "objeto_racional1 + objeto_racional2: ";
+  (objeto_racional1+objeto_racional2).write();
 
-  cout << "b - a: ";
-  (b-a).write();
+  cout << "objeto_racional2 - objeto_racional1: ";
+  (objeto_racional2-objeto_racional1).write();
 
-  cout << "a * b: ";
-  (a*b).write();
+  cout << "objeto_racional1 * objeto_racional2: ";
+  (objeto_racional1*objeto_racional2).write();
   
-  cout << "a / b: ";
-  (a/b).write();
+  cout << "objeto_racional1 / objeto_racional2: ";
+  (objeto_racional1/objeto_racional2).write();
   
   cout << endl;
   
   // FASE II
-  vector_t<double> v, w;
-  v.read(), v.write();
-  w.read(), w.write();
+  Vector_t<double> vector1, vector2;
+  vector1.read(), vector1.write();
+  vector2.read(), vector2.write();
   
-  cout << "Producto escalar de vector_t<double>: " << scal_prod(v, w) << endl << endl;
+  cout << "Producto escalar de Vector_t<double>: " << scal_prod(vector1, vector2) << endl << endl;
   
-  vector_t<rational_t> x, y;
-  x.read(), x.write();
-  y.read(), y.write();
+  Vector_t<Rational_t> vector3, vector4;
+  vector3.read(), vector3.write();
+  vector4.read(), vector4.write();
   
-  cout << "Producto escalar de vector_t<rational_t>: " << scal_prod(x, y) << endl << endl;
-  
+  cout << "Producto escalar de Vector_t<Rational_t>: " << scal_prod(vector3, vector4) << endl << endl;
   
   // FASE III
-  matrix_t<double> A, B, C;
-  A.read(), A.write();
-  B.read(), B.write();
+  Matrix_t<double> matriz_a, matriz_b, matriz_c;
+  matriz_a.read(), matriz_a.write();
+  matriz_b.read(), matriz_b.write();
   
-  C.multiply(A, B);
-  cout << "Multiplicación de matrices A y B: " << endl;
-  C.write();
+  matriz_c.multiply(matriz_a, matriz_b);
+  cout << "Multiplicación de matrices matriz_a y matriz_b: " << endl;
+  matriz_c.write();
   
   return 0;
 }

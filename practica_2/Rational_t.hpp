@@ -21,12 +21,12 @@
 
 using namespace std;
 
-class rational_t
+class Rational_t
 {
   // pautas de estilos [44] y [73]: primero "public" y después "private"
 public:
-  rational_t(const int = 0, const int = 1);
-  ~rational_t() {}
+  Rational_t(const int = 0, const int = 1);
+  ~Rational_t() {}
   
   // pauta de estilo [71]: indentación a 2 espacios
   
@@ -39,34 +39,35 @@ public:
   void set_den(const int);
 
   double value(void) const;
-  rational_t opposite(void) const;
-  rational_t reciprocal(void) const;
+  Rational_t opposite(void) const;
+  Rational_t reciprocal(void) const;
 
-  bool is_equal(const rational_t&, const double precision = EPSILON) const;
-  bool is_greater(const rational_t&, const double precision = EPSILON) const;
-  bool is_less(const rational_t&, const double precision = EPSILON) const;
+  bool is_equal(const Rational_t&, const double precision = EPSILON) const;
+  bool is_greater(const Rational_t&, const double precision = EPSILON) const;
+  bool is_less(const Rational_t&, const double precision = EPSILON) const;
 
-  rational_t add(const rational_t&) const;
-  rational_t substract(const rational_t&) const;
-  rational_t multiply(const rational_t&) const;
-  rational_t divide(const rational_t&) const;
+  Rational_t add(const Rational_t&) const;
+  Rational_t substract(const Rational_t&) const;
+  Rational_t multiply(const Rational_t&) const;
+  Rational_t divide(const Rational_t&) const;
 
   void write(ostream& os = cout) const;
   void read(istream& is = cin);
   
 private:
-  // pauta de estilo [11]: nombre de los atributos seguido de "_"
+
   int num_, den_;
 };
 
 
 // sobrecarga de los operadores de E/S
-ostream& operator<<(ostream& os, const rational_t&);
-istream& operator>>(istream& is, rational_t&);
+ostream& operator<<(ostream& os, const Rational_t&);
+istream& operator>>(istream& is, Rational_t&);
 
 // FASE I: operadores
-rational_t operator+(const rational_t&, const rational_t&);
-rational_t operator-(const rational_t&, const rational_t&);
-rational_t operator*(const rational_t&, const rational_t&);
-rational_t operator/(const rational_t&, const rational_t&);
+//Sobrecarga de operadores +,-,*,/
+Rational_t operator+(const Rational_t&, const Rational_t&);
+Rational_t operator-(const Rational_t&, const Rational_t&);
+Rational_t operator*(const Rational_t&, const Rational_t&);
+Rational_t operator/(const Rational_t&, const Rational_t&);
 
