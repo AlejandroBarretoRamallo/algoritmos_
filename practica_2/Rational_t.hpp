@@ -23,7 +23,6 @@ using namespace std;
 
 class Rational_t
 {
-  // pautas de estilos [44] y [73]: primero "public" y después "private"
 public:
   Rational_t(const int = 0, const int = 1);
   ~Rational_t() {}
