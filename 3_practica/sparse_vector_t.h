@@ -25,7 +25,7 @@ typedef vector_t<pair_double_t> pair_vector_t;
 class sparse_vector_t {
  public:
   // constructores
-  sparse_vector_t(const int = 0);
+  sparse_vector_t(const int = 0); //
   sparse_vector_t(const vector_t<double>&,
 		  const double = EPS); // constructor normal
   sparse_vector_t(const sparse_vector_t&);  // constructor de copia
@@ -69,7 +69,8 @@ sparse_vector_t::sparse_vector_t(const int n) : pv_(n), nz_(0), n_(n) {}
 // FASE II
 sparse_vector_t::sparse_vector_t(const vector_t<double>& v, const double eps)
     : pv_(), nz_(0), n_(0) {
-  // poner el código aquí
+  n_ = v.get_size();
+  
 }
 
 // constructor de copia

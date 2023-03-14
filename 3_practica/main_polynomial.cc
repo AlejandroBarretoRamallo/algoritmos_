@@ -15,8 +15,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
   Polynomial p1, p2, p3;
   
   cin >> p1 >> p2 >> p3;
