@@ -70,7 +70,20 @@ sparse_vector_t::sparse_vector_t(const int n) : pv_(n), nz_(0), n_(n) {}
 sparse_vector_t::sparse_vector_t(const vector_t<double>& v, const double eps)
     : pv_(), nz_(0), n_(0) {
   n_ = v.get_size();
-  
+  nz_ = 0;
+  for(int i = 0; i < v.get_size(); ++i) {
+    if (!IsNotZero(v[i])) {
+      ++nz_;
+    }
+  }
+  pv_.resize(nz_);
+  for( int i = 0, j = 0; i < v.get_size(); ++i) {
+    if(IsNotZero(v[i])) {
+      pair_double_t value(v[i],i);
+      pv_[j] = value;
+    }
+    ++j;
+  }
 }
 
 // constructor de copia

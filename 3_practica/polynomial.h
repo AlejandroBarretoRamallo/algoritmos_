@@ -32,7 +32,7 @@ class Polynomial : public vector_t<double> {
   void Write(std::ostream& = std::cout, const double eps = EPS) const;
   
   // operaciones
-  double Eval(const double) const;
+  double Eval(const double) const;  
   bool IsEqual(const Polynomial&, const double = EPS) const;
  };
 
@@ -82,7 +82,9 @@ std::ostream& operator<<(std::ostream& os, const Polynomial& p) {
 // Evaluación de un polinomio representado por vector denso
 double Polynomial::Eval(const double x) const {
   double result{0.0};
-  // poner el código aquí
+  for(int i = 0; i < get_size(); ++i) {
+    result += get_val(i) * pow(x, i);
+  }
   return result;
 }
 
@@ -123,7 +125,9 @@ std::ostream& operator<<(std::ostream& os, const SparsePolynomial& p) {
 // Evaluación de un polinomio representado por vector disperso
 double SparsePolynomial::Eval(const double x) const {
   double result{0.0};
-  // poner el código aquí
+  for( int i = 0; i < get_nz(); ++i) {
+
+  }
   return result;
 }
 
